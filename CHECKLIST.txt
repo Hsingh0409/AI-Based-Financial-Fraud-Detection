@@ -1,0 +1,188 @@
+╔═══════════════════════════════════════════════════════════════╗
+║                    INSTALLATION CHECKLIST                     ║
+║          Credit Card Fraud Detection Project                  ║
+╚═══════════════════════════════════════════════════════════════╝
+
+Follow these steps in order. Check ✓ each box as you complete it.
+
+┌───────────────────────────────────────────────────────────────┐
+│ STEP 1: INSTALL PYTHON (5-10 minutes)                        │
+└───────────────────────────────────────────────────────────────┘
+
+[ ] 1.1  Go to https://www.python.org/downloads/
+[ ] 1.2  Click "Download Python 3.12.x" (or 3.11)
+[ ] 1.3  Run the downloaded installer
+[ ] 1.4  ⚠️  CHECK THE BOX: "Add python.exe to PATH"
+[ ] 1.5  Click "Install Now"
+[ ] 1.6  Wait for installation (2-3 minutes)
+[ ] 1.7  Click "Close"
+[ ] 1.8  Close PowerShell (if open)
+[ ] 1.9  Open NEW PowerShell
+[ ] 1.10 Test: python --version
+         Expected: Python 3.12.x or 3.11.x
+         ✓ If you see version, continue
+         ✗ If error, reinstall with PATH checked
+
+┌───────────────────────────────────────────────────────────────┐
+│ STEP 2: SETUP PROJECT (2-5 minutes)                          │
+└───────────────────────────────────────────────────────────────┘
+
+[ ] 2.1  Open PowerShell
+[ ] 2.2  Run: cd C:\Users\manib\OneDrive\Desktop\creditcard
+[ ] 2.3  Run: dir
+         Verify you see: setup.bat, notebooks/, src/
+[ ] 2.4  Run: .\setup.bat
+[ ] 2.5  Wait for "Setup Complete!" message
+[ ] 2.6  Verify: "Kaggle API connection successful!"
+
+┌───────────────────────────────────────────────────────────────┐
+│ STEP 3: RUN THE PROJECT (5-15 minutes)                       │
+└───────────────────────────────────────────────────────────────┘
+
+[ ] 3.1  Run: .\run_demo.bat
+[ ] 3.2  Browser opens with Jupyter
+         (If not, copy http://localhost:8888/... URL to browser)
+[ ] 3.3  In Jupyter menu: Kernel → Restart & Run All
+[ ] 3.4  Click "Restart and Run All Cells" to confirm
+[ ] 3.5  Wait for all cells to execute (5-15 minutes)
+         Watch for:
+         - "Downloading dataset..."
+         - "Running preprocessing..."
+         - "Training baseline model..."
+         - "Training federated model..."
+         - "Running XAI..."
+[ ] 3.6  Verify no errors (red text)
+[ ] 3.7  See plots appear in notebook
+
+┌───────────────────────────────────────────────────────────────┐
+│ STEP 4: CHECK OUTPUTS (1 minute)                             │
+└───────────────────────────────────────────────────────────────┘
+
+[ ] 4.1  Open File Explorer
+[ ] 4.2  Navigate to: C:\Users\manib\OneDrive\Desktop\creditcard\outputs
+[ ] 4.3  Verify these files exist:
+         [ ] model_comparison.png      (bar chart)
+         [ ] feature_importance.png    (horizontal bars)
+         [ ] xai_report.json          (text file)
+         [ ] baseline_model.pt        (5-10 MB)
+         [ ] global_model.pt          (5-10 MB)
+[ ] 4.4  Double-click model_comparison.png - opens image
+[ ] 4.5  Double-click feature_importance.png - opens image
+[ ] 4.6  Right-click xai_report.json → Open with Notepad
+
+┌───────────────────────────────────────────────────────────────┐
+│ STEP 5: PREPARE PRESENTATION (5 minutes)                     │
+└───────────────────────────────────────────────────────────────┘
+
+[ ] 5.1  Read: PRESENTATION_GUIDE.md
+[ ] 5.2  Practice explaining:
+         "I used the Kaggle credit card fraud dataset"
+         "Built GNN+LSTM model for fraud detection"
+         "Trained with federated learning (FedAvg)"
+         "Handled class imbalance with class weighting"
+         "Generated XAI explanations for interpretability"
+[ ] 5.3  Prepare to show:
+         - Jupyter notebook (code)
+         - model_comparison.png (results)
+         - feature_importance.png (XAI)
+[ ] 5.4  Note your AUC score from xai_report.json
+
+╔═══════════════════════════════════════════════════════════════╗
+║                      QUICK REFERENCE                          ║
+╚═══════════════════════════════════════════════════════════════╝
+
+Commands to run:
+  cd C:\Users\manib\OneDrive\Desktop\creditcard
+  .\setup.bat
+  .\run_demo.bat
+
+Files to show teacher:
+  ✓ outputs/model_comparison.png
+  ✓ outputs/feature_importance.png
+  ✓ outputs/xai_report.json
+
+Key talking points:
+  • Dataset: 284,807 real transactions from Kaggle
+  • Model: GNN (relationships) + LSTM (temporal)
+  • Training: Federated Learning (FedAvg, 4 clients)
+  • Challenge: 0.17% fraud rate (extreme imbalance)
+  • Solution: Class weighting
+  • Result: 0.75-0.95 AUC
+  • XAI: Permutation importance
+
+╔═══════════════════════════════════════════════════════════════╗
+║                      TROUBLESHOOTING                          ║
+╚═══════════════════════════════════════════════════════════════╝
+
+Problem: "python: command not found"
+Fix: Reinstall Python, CHECK "Add to PATH" box
+
+Problem: "Out of memory"
+Fix: Edit notebook, change sample_frac to 0.05
+
+Problem: PyTorch fails to install
+Fix: Visit pytorch.org/get-started/locally/
+
+Problem: Setup takes forever
+Fix: Normal on slow internet, wait 5-10 minutes
+
+Problem: Jupyter doesn't open
+Fix: Copy http://localhost:8888/... URL to browser
+
+╔═══════════════════════════════════════════════════════════════╗
+║                    FILES IN YOUR PROJECT                      ║
+╚═══════════════════════════════════════════════════════════════╝
+
+START HERE:
+  ⭐ READ_ME_FIRST.txt         - Simple overview
+  ⭐ INSTALLATION_GUIDE.md      - Detailed instructions (this file)
+  ⭐ INSTALL_PYTHON_FIRST.md    - Python installation help
+
+RUN THESE:
+  🚀 CLICK_ME_TO_SETUP.bat     - Double-click to setup
+  🚀 CLICK_ME_TO_RUN.bat       - Double-click to run
+
+DOCUMENTATION:
+  📘 README.md                  - Full project documentation
+  📘 PRESENTATION_GUIDE.md      - How to present to teacher
+  📘 QUICK_START.md             - Quick command reference
+  📘 PROJECT_STATUS.md          - Project overview
+  📘 HOW_TO_RUN.md             - Troubleshooting guide
+
+PROJECT FILES:
+  📓 notebooks/demo.ipynb       - Main notebook (run this!)
+  🐍 src/                       - Python source code
+  📋 requirements.txt           - Dependencies list
+  🔧 setup.bat, setup.sh        - Setup scripts
+
+CREATED AFTER RUNNING:
+  📂 data/                      - Downloaded dataset
+     └─ creditcard.csv         - 284,807 transactions
+     └─ processed.npz          - Preprocessed sequences
+  📂 outputs/                   - Results (show to teacher!)
+     └─ model_comparison.png
+     └─ feature_importance.png
+     └─ xai_report.json
+     └─ baseline_model.pt
+     └─ global_model.pt
+
+╔═══════════════════════════════════════════════════════════════╗
+║                         YOU'RE READY!                         ║
+╚═══════════════════════════════════════════════════════════════╝
+
+Current status:
+  ✓ Kaggle API configured (username: dikuuu)
+  ✓ All code ready
+  ✓ Documentation complete
+  ⏳ Python installation needed ← DO THIS FIRST!
+
+Next step:
+  Install Python from https://www.python.org/downloads/
+  Then run the checklist above!
+
+Total time needed: 15-30 minutes
+  • Python install: 5-10 min
+  • Setup: 2-5 min
+  • Training: 5-15 min
+
+Good luck! 🚀🎓
